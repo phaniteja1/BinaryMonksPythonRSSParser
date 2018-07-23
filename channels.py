@@ -37,6 +37,70 @@ channels = [
         "channel": "christian_heilmann",
         "title": 'Christian Heilmann'
     },
+    {
+        "channel": "echo_js",
+        "title": "Echo JS"
+    },
+    {
+        "channel": "bruce_lawson",
+        "title": "Bruce Lawson"
+    },
+    {
+        "channel": "hey_designer",
+        "title": "Hey Designer"
+    },
+    {
+        "channel": "treehouse_blog",
+        "title": "Treehouse Blog"
+    },
+    {
+        "channel": "cats_who_code",
+        "title": "Cats Who Code"
+    },
+    {
+        "channel": "remy_sharp",
+        "title": "Remy Sharp"
+    },
+    {
+        "channel": "snook",
+        "title": "Snook.ca"
+    },
+    {
+        "channel": "ben_nadel",
+        "title": "Ben Nadel"
+    },
+    {
+        "channel": "site_point",
+        "title": "Site Point"
+    },
+    {
+        "channel": "javascript_weekly",
+        "title": "Javascript Weekly"
+    },
+    {
+        "channel": "sidebar",
+        "title": "Sidebar"
+    },
+    {
+        "channel": "cloud_four",
+        "title": "Cloud Four"
+    },
+    {
+        "channel": "adactio",
+        "title": "Adactio"
+    },
+    {
+        "channel": "functioning_form",
+        "title": "Functioning Form"
+    },
+    {
+        "channel": "impressive_webs",
+        "title": "Impressive Webs"
+    },
+    {
+        "channel": "jens_o_meiert",
+        "title": "Jens O Meiert"
+    },
     # {
     # 	"channel": "brad_frost",
     # 	"title": "Brad Frost"

@@ -43,7 +43,23 @@ newsurls = {
     'tech_meme': 'https://www.techmeme.com/feed.xml',
     'mit_tech_review': 'https://www.technologyreview.com/stories.rss',
     'slash_dot': 'http://rss.slashdot.org/Slashdot/slashdotMain',
-    'christian_heilmann': 'http://feeds.feedburner.com/chrisheilmann'
+    'christian_heilmann': 'http://feeds.feedburner.com/chrisheilmann',
+    'bruce_lawson': 'http://www.brucelawson.co.uk/feed',
+    'echo_js': 'http://www.echojs.com/rss',
+    'hey_designer': 'http://feedpress.me/heydesigner',
+    'cats_who_code': 'http://feeds.feedburner.com/Catswhocode',
+    'adactio': 'https://adactio.com/journal/rss',
+    'functioning_form': 'http://feeds.feedburner.com/FunctioningForm',
+    'cloud_four': 'http://feeds.feedburner.com/cloudfour',
+    'impressive_webs': 'http://feeds2.feedburner.com/ImpressiveWebs',
+    'jens_o_meiert': 'http://meiert.com/en/feed',
+    'treehouse_blog': 'blog.teamtreehouse.com/feed',
+    'remy_sharp': 'http://feeds.feedburner.com/remysharp',
+    'snook': 'http://snook.ca/posts/index.rss',
+    'ben_nadel': 'www.bennadel.com/?event=blog.rss',
+    'site_point': 'www.sitepoint.com/javascript/feed/',
+    'javascript_weekly': 'https://javascriptweekly.com/rss/161kj581',
+    'sidebar': 'https://sidebar.io/feed.xml',
     # 'brad_frost': 'bradfrost.com/feed/'
 }
 

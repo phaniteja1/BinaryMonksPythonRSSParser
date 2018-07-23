@@ -33,6 +33,10 @@ channels = [
         "channel": "slash_dot",
         "title": "Slash Dot"
     },
+    {
+        "channel": "christian_heilmann",
+        "title": 'Christian Heilmann'
+    },
     # {
     # 	"channel": "brad_frost",
     # 	"title": "Brad Frost"

@@ -42,7 +42,8 @@ newsurls = {
     'tech_crunch': 'http://feeds.feedburner.com/TechCrunch/',
     'tech_meme': 'https://www.techmeme.com/feed.xml',
     'mit_tech_review': 'https://www.technologyreview.com/stories.rss',
-    'slash_dot': 'http://rss.slashdot.org/Slashdot/slashdotMain'
+    'slash_dot': 'http://rss.slashdot.org/Slashdot/slashdotMain',
+    'christian_heilmann': 'http://feeds.feedburner.com/chrisheilmann'
     # 'brad_frost': 'bradfrost.com/feed/'
 }
 

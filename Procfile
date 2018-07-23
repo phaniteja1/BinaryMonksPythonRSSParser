@@ -1,2 +1,2 @@
 heroku ps:scale web=1
-worker: python script.py
+web: python script.py runserver 0.0.0.0:$PORT

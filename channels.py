@@ -18,6 +18,10 @@ channels = [
         "title": "Hacker News"
     },
     {
+        "channel": "reddit_programming",
+        "title": "Reddit Programming"
+    },
+    {
         "channel": "tech_meme",
         "title": "Tech Meme"
     },
@@ -40,6 +44,10 @@ channels = [
     {
         "channel": "echo_js",
         "title": "Echo JS"
+    },
+    {
+        "channel": "a_list_apart",
+        "title": "A List Apart"
     },
     {
         "channel": "bruce_lawson",
@@ -73,6 +81,10 @@ channels = [
         "channel": "site_point",
         "title": "Site Point"
     },
+    # {
+    #     "channel": "github_blog",
+    #     "title": "Github Blog"
+    # },
     {
         "channel": "javascript_weekly",
         "title": "Javascript Weekly"
@@ -112,10 +124,6 @@ channels = [
     {
         "channel": "coding_horror",
         "title": "Coding Horror"
-    },
-    {
-        "channel": "reddit_programming",
-        "title": "Reddit Programming"
     },
     {
         "channel": "david_walsh",

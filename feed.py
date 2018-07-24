@@ -32,7 +32,6 @@ newsurls = {
     'code_blog': 'https://codeblog.jonskeet.uk/feed/',
     'coding_horror': 'https://feeds.feedburner.com/codinghorror',
     'reddit_programming': 'https://www.reddit.com/r/programming/.rss',
-    # 'a_list_apart': 'http://alistapart.com/site/rss', --> Too late
     # 'cat_on_mat': 'http://feeds2.feedburner.com/catonmat',    --> content too long
     'david_walsh': 'https://davidwalsh.name/feed',
     'joel_on_software': 'https://www.joelonsoftware.com/feed/',
@@ -60,6 +59,8 @@ newsurls = {
     'site_point': 'www.sitepoint.com/javascript/feed/',
     'javascript_weekly': 'https://javascriptweekly.com/rss/161kj581',
     'sidebar': 'https://sidebar.io/feed.xml',
+    'a_list_apart': 'alistapart.com/main/feed',
+    # 'github_blog': 'https://blog.github.com/all.atom'
     # 'brad_frost': 'bradfrost.com/feed/'
 }
 

@@ -77,13 +77,8 @@ for key, url in newsurls.items():
 
 uri = 'mongodb://helloworld:helloworldpassword1@ds139277.mlab.com:39277/binarymonks?authMechanism=SCRAM-SHA-1'
 client = MongoClient(uri)
-print('Client is : ', client)
-
 db = client.binarymonks
-print('Database is: ', db)
-
 collection = db.feeds
-print('Collection : ', collection)
 
 collection.delete_many({})
     
@@ -104,9 +99,7 @@ for hl in allheadlines:
 # shuffling the feed
 shuffle(feed)
 
-print('Feed before : ', [o['published'] for o in feed[1:10]])
-
-feed.sort(key=lambda d: d['published'], reverse=True)
+feed.sort(key=lambda date: datetime.strptime(date['published'], "%d %B %Y %H:%M:%S"), reverse=True)
 
 result = collection.insert_many(feed)
 print('Inserted Ids : ', result)

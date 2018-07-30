@@ -93,10 +93,10 @@ channels = [
         "channel": "sidebar",
         "title": "Sidebar"
     },
-    {
-        "channel": "cloud_four",
-        "title": "Cloud Four"
-    },
+    # {
+    #     "channel": "cloud_four",
+    #     "title": "Cloud Four"
+    # },
     {
         "channel": "adactio",
         "title": "Adactio"
@@ -113,18 +113,22 @@ channels = [
         "channel": "jens_o_meiert",
         "title": "Jens O Meiert"
     },
+    {
+        "channel": "coding_confessions",
+        "title": "Coding Confessions"
+    },
     # {
     # 	"channel": "brad_frost",
     # 	"title": "Brad Frost"
     # },
-    {
-        "channel": "code_blog",
-        "title": "Code Blog"
-    },
-    {
-        "channel": "coding_horror",
-        "title": "Coding Horror"
-    },
+    # {
+    #     "channel": "code_blog",
+    #     "title": "Code Blog"
+    # },
+    # {
+    #     "channel": "coding_horror",
+    #     "title": "Coding Horror"
+    # },
     {
         "channel": "david_walsh",
         "title": "David Walsh"
@@ -133,10 +137,10 @@ channels = [
         "channel": "joel_on_software",
         "title": "Joel on Software"
     },
-    {
-        "channel": "sutter_mill",
-        "title": "Sutter Mill"
-    }
+    # {
+    #     "channel": "sutter_mill",
+    #     "title": "Sutter Mill"
+    # }
 ]
 
 result = collection.insert_many(channels)

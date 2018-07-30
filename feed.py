@@ -3,7 +3,9 @@ import feedparser
 from pymongo import MongoClient
 from moment import Moment
 from datetime import datetime
+from format_feed import format_feed_data
 import pytz
+from bs4 import BeautifulSoup
 
 # Function to fetch the rss feed and return the parsed RSS
 def parseRSS( rss_url ):
@@ -29,13 +31,13 @@ allheadlines = []
 
 # List of RSS feeds that we will fetch and combine
 newsurls = {
-    'code_blog': 'https://codeblog.jonskeet.uk/feed/',
-    'coding_horror': 'https://feeds.feedburner.com/codinghorror',
+    # 'code_blog': 'https://codeblog.jonskeet.uk/feed/',
+    # 'coding_horror': 'https://feeds.feedburner.com/codinghorror',
     'reddit_programming': 'https://www.reddit.com/r/programming/.rss',
     # 'cat_on_mat': 'http://feeds2.feedburner.com/catonmat',    --> content too long
     'david_walsh': 'https://davidwalsh.name/feed',
     'joel_on_software': 'https://www.joelonsoftware.com/feed/',
-    'sutter_mill': 'https://herbsutter.com/feed/',
+    # 'sutter_mill': 'https://herbsutter.com/feed/',
     # 'steve_yegge': 'http://steve-yegge.blogspot.com/feeds/posts/default',  --> Too late
     'hacker_news': 'https://news.ycombinator.com/rss',
     'tech_crunch': 'http://feeds.feedburner.com/TechCrunch/',
@@ -49,7 +51,7 @@ newsurls = {
     'cats_who_code': 'http://feeds.feedburner.com/Catswhocode',
     'adactio': 'https://adactio.com/journal/rss',
     'functioning_form': 'http://feeds.feedburner.com/FunctioningForm',
-    'cloud_four': 'http://feeds.feedburner.com/cloudfour',
+    # 'cloud_four': 'http://feeds.feedburner.com/cloudfour',
     'impressive_webs': 'http://feeds2.feedburner.com/ImpressiveWebs',
     'jens_o_meiert': 'http://meiert.com/en/feed',
     'treehouse_blog': 'blog.teamtreehouse.com/feed',
@@ -60,6 +62,7 @@ newsurls = {
     'javascript_weekly': 'https://javascriptweekly.com/rss/161kj581',
     'sidebar': 'https://sidebar.io/feed.xml',
     'a_list_apart': 'alistapart.com/main/feed',
+    'coding_confessions': 'www.codingconfessional.com/feed',
     # 'github_blog': 'https://blog.github.com/all.atom'
     # 'brad_frost': 'bradfrost.com/feed/'
 }
@@ -88,7 +91,7 @@ for hl in allheadlines:
     feeditem = {
         'title': hl['title'],
         'link': hl['link'],
-        'summary': hl.get('summary', ''),
+        'summary': format_feed_data(hl.get('summary', ''), hl['channel']),
         'channel': hl['channel'],
         'author': hl.get('author', ''),
         'published': format_published(hl.get('published', None))

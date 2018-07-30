@@ -16,6 +16,7 @@ def getHeadlines( channel, rss_url ):
     headlines = []
     
     feed = parseRSS( rss_url )
+
     for newsitem in feed['items']:
         newsitem['channel'] = channel
         headlines.append(newsitem)
@@ -54,17 +55,17 @@ newsurls = {
     # 'cloud_four': 'http://feeds.feedburner.com/cloudfour',
     'impressive_webs': 'http://feeds2.feedburner.com/ImpressiveWebs',
     'jens_o_meiert': 'http://meiert.com/en/feed',
-    'treehouse_blog': 'blog.teamtreehouse.com/feed',
+    'treehouse_blog': 'http://blog.teamtreehouse.com/feed',
     'remy_sharp': 'http://feeds.feedburner.com/remysharp',
     'snook': 'http://snook.ca/posts/index.rss',
-    'ben_nadel': 'www.bennadel.com/?event=blog.rss',
-    'site_point': 'www.sitepoint.com/javascript/feed/',
+    'ben_nadel': 'http://www.bennadel.com/?event=blog.rss',
+    'site_point': 'http://www.sitepoint.com/javascript/feed/',
     'javascript_weekly': 'https://javascriptweekly.com/rss/161kj581',
     'sidebar': 'https://sidebar.io/feed.xml',
-    'a_list_apart': 'alistapart.com/main/feed',
-    'coding_confessions': 'www.codingconfessional.com/feed',
+    'a_list_apart': 'http://alistapart.com/main/feed',
+    'coding_confessions': 'http://www.codingconfessional.com/feed',
     # 'github_blog': 'https://blog.github.com/all.atom'
-    # 'brad_frost': 'bradfrost.com/feed/'
+    # 'brad_frost': 'http://bradfrost.com/feed/'
 }
 
 def format_published(input_datetime_str):
@@ -89,7 +90,7 @@ collection.delete_many({})
 feed = []
 for hl in allheadlines:
     feeditem = {
-        'title': hl['title'],
+        'title': hl.get('title', 'Title'),
         'link': hl['link'],
         'summary': format_feed_data(hl.get('summary', ''), hl['channel']),
         'channel': hl['channel'],

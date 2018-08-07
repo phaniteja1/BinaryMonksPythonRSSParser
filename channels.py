@@ -2,15 +2,8 @@ from pymongo import MongoClient
 
 uri = 'mongodb://helloworld:helloworldpassword1@ds139277.mlab.com:39277/binarymonks?authMechanism=SCRAM-SHA-1'
 client = MongoClient(uri)
-print('Client is : ', client)
-
 db = client.binarymonks
-print('Database is: ', db)
-
 collection = db.channels
-print('Collection : ', collection)
-
-collection.delete_many({})
 
 channels = [
     {
@@ -143,5 +136,9 @@ channels = [
     # }
 ]
 
-result = collection.insert_many(channels)
-print('Inserted Channels Ids : ', result)
+def run_and_insert():
+    # clean all the current channels
+    collection.delete_many({})
+
+    result = collection.insert_many(channels)
+    print('Inserted Channels Ids : ', result)

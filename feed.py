@@ -74,36 +74,38 @@ def format_published(input_datetime_str):
         moment_obj = Moment(input_datetime_str).format('DD MMMM YYYY HH:mm:ss')
     return moment_obj
 
-# Iterate over the feed urls
-for key, url in newsurls.items():
-    # Call getHeadlines() and combine the returned headlines with allheadlines
-    allheadlines.extend(getHeadlines(key, url))
 
-uri = 'mongodb://helloworld:helloworldpassword1@ds139277.mlab.com:39277/binarymonks?authMechanism=SCRAM-SHA-1'
-client = MongoClient(uri)
-db = client.binarymonks
-collection = db.feeds
+def run_and_insert():
+    # Iterate over the feed urls
+    for key, url in newsurls.items():
+        # Call getHeadlines() and combine the returned headlines with allheadlines
+        allheadlines.extend(getHeadlines(key, url))
 
-collection.delete_many({})
-    
-# Iterate over the allheadlines list and print each headline
-feed = []
-for hl in allheadlines:
-    feeditem = {
-        'title': hl.get('title', 'Title'),
-        'link': hl['link'],
-        'summary': format_feed_data(hl.get('summary', ''), hl['channel']),
-        'channel': hl['channel'],
-        'author': hl.get('author', ''),
-        'published': format_published(hl.get('published', None))
-    }
+    uri = 'mongodb://helloworld:helloworldpassword1@ds139277.mlab.com:39277/binarymonks?authMechanism=SCRAM-SHA-1'
+    client = MongoClient(uri)
+    db = client.binarymonks
+    collection = db.feeds
 
-    feed.append(feeditem)
+    collection.delete_many({})
+        
+    # Iterate over the allheadlines list and print each headline
+    feed = []
+    for hl in allheadlines:
+        feeditem = {
+            'title': hl.get('title', 'Title'),
+            'link': hl['link'],
+            'summary': format_feed_data(hl.get('summary', ''), hl['channel']),
+            'channel': hl['channel'],
+            'author': hl.get('author', ''),
+            'published': format_published(hl.get('published', None))
+        }
 
-# shuffling the feed
-shuffle(feed)
+        feed.append(feeditem)
 
-feed.sort(key=lambda date: datetime.strptime(date['published'], "%d %B %Y %H:%M:%S"), reverse=True)
+    # shuffling the feed
+    shuffle(feed)
 
-result = collection.insert_many(feed)
-print('Inserted Ids : ', result)
+    feed.sort(key=lambda date: datetime.strptime(date['published'], "%d %B %Y %H:%M:%S"), reverse=True)
+
+    result = collection.insert_many(feed)
+    print('Inserted Ids : ', result)

@@ -4,9 +4,9 @@ import channels
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=59)
+@sched.scheduled_job('interval', hours=2)
 def timed_job():
-    print('This job is run every one hour.')
+    print('This job is run every two hours.')
     feed.run_and_insert()
     channels.run_and_insert()
 
